@@ -12,7 +12,7 @@ export const JobsListing: React.FC = ({ isHome = false }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch(`http://localhost:4500/jobs${isHome ? '?_limit=3' : ''}`)
+        const res = await fetch(`/api/jobs${isHome ? '?_limit=3' : ''}`)
         const data = await res.json()
         setJobs(data)
       } catch (err) {
